@@ -18,12 +18,14 @@ const App = () => {
   const [rulesOpen, setRulesOpen] = useState<boolean>(false);
   const [msg, setMsg] = useState<string>("");
   const [winner, setWinner] = useState<string>("");
+  const [gameOn, setGameOn] = useState<boolean>(false);
 
   // Player choice event
   const handlePlayerChoice = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPlayerChoice(e.target.id);
     drawComputerChoice();
     setShowResult(true);
+    setGameOn(true);
   };
 
   // Draw computer choice
@@ -41,17 +43,19 @@ const App = () => {
         paper: ["rock", "spock"],
         scissors: ["paper", "lizard"],
       };
-      if (playerChoice === compChoice) {
-        setMsg("IT'S A DRAW");
-        setWinner("");
-      } else if (shapes[playerChoice].includes(compChoice)) {
-        setMsg("YOU WIN");
-        setScore(score + 1);
-        setWinner("player");
-      } else {
-        setMsg("YOU LOSE");
-        setWinner("computer");
-        setScore(score - 1);
+      if (gameOn) {
+        if (playerChoice === compChoice) {
+          setMsg("IT'S A DRAW");
+          setWinner("");
+        } else if (shapes[playerChoice].includes(compChoice)) {
+          setMsg("YOU WIN");
+          setScore(score + 1);
+          setWinner("player");
+        } else {
+          setMsg("YOU LOSE");
+          setWinner("computer");
+          setScore(score - 1);
+        }
       }
     };
     findWinner();
@@ -73,20 +77,21 @@ const App = () => {
   };
 
   //Play again handler
-  const handlePlayAgain = () => {
+  const handlePlayAgain = (): void => {
     setShowResult(false);
     setCompChoice("");
     setPlayerChoice("");
     setMsg("");
+    setGameOn(false);
   };
 
   //Open rules pop-up
-  const handleOpenPopUp = () => {
+  const handleOpenPopUp = (): void => {
     setRulesOpen(true);
   };
 
   //Close rules pop-up
-  const handleClosePopUp = () => {
+  const handleClosePopUp = (): void => {
     setRulesOpen(false);
   };
 
