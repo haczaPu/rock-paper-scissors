@@ -38,7 +38,7 @@ const App = () => {
   // Mark out winner
   useEffect(() => {
     const findWinner = () => {
-      const shapes = {
+      const shapes: { [shape: string]: string[] } = {
         rock: ["scissors", "lizard"],
         paper: ["rock", "spock"],
         scissors: ["paper", "lizard"],
