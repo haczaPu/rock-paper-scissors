@@ -14,11 +14,11 @@ const Game: React.FC<GameProps> = ({ handlePlayerChoice, showResult }) => {
     <Flex
       bgImage="url('./assets/images/bg-triangle.svg')"
       bgPosition="center"
-      bgSize="320px"
+      bgSize={["200px", "300px", "320px", "320px"]}
       bgRepeat="no-repeat"
       position="relative"
-      w="600px"
-      h="600px"
+      w={["400px", "450px", "600px", "600px"]}
+      h={["400px", "600px", "600px", "600px"]}
       justifyContent="center"
     >
       <Paper handlePlayerChoice={handlePlayerChoice} showResult={showResult} />

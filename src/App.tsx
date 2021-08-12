@@ -116,16 +116,16 @@ const App = () => {
         )}
         <Button
           onClick={handleOpenPopUp}
-          w="140px"
-          h="45px"
+          w={["100px", "140px", "140px", "140px"]}
+          h={["35px", "45px", "45px", "45px"]}
           bg="none"
           color="white"
           position="absolute"
-          bottom="50px"
-          right="50px"
+          bottom={["30px", "30px", "50px", "50px"]}
+          right={["center", "center", "50px", "50px"]}
           border="solid 3px hsl(217, 16%, 45%)"
           borderRadius="10px"
-          fontSize="20px"
+          fontSize={["15px", "20px", "20px", "20px"]}
           letterSpacing="2px"
         >
           RULES

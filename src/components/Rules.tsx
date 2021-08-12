@@ -17,16 +17,16 @@ const Rules: React.FC<RulesProps> = ({ handleClosePopUp }) => {
       zIndex="1"
     >
       <VStack
-        w="400px"
-        h="415px"
-        p="35px"
+        w={["80%", "400px", "400px", "400px"]}
+        spacing="50px"
+        p={["20px", "35px", "35px", "35px"]}
         bg="white"
         direction="column"
         justifyContent="space-between"
         borderRadius="15px"
       >
         <HStack w="100%" justifyContent="space-between">
-          <Text color="hsl(229, 25%, 31%)" fontSize="3xl" fontWeight="bold" letterSpacing="0">
+          <Text color="hsl(229, 25%, 31%)" fontSize={["2xl", "3xl", "3xl", "3xl"]} fontWeight="bold" letterSpacing="0">
             RULES
           </Text>
           <Button onClick={handleClosePopUp}>
