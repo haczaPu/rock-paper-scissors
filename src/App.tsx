@@ -10,6 +10,7 @@ import Paper from "./components/Paper";
 import Rock from "./components/Rock";
 import Scissors from "./components/Scissors";
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const App = () => {
   const [score, setScore] = useState<number>(0);
   const [playerChoice, setPlayerChoice] = useState<string>("");
