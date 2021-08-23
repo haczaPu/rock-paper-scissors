@@ -122,7 +122,7 @@ const App = () => {
           bg="none"
           color="white"
           position="absolute"
-          bottom={["30px", "30px", "50px", "50px"]}
+          bottom={["80px", "80px", "50px", "50px"]}
           right={["center", "center", "50px", "50px"]}
           border="solid 3px hsl(217, 16%, 45%)"
           borderRadius="10px"
